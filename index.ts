@@ -1,4 +1,4 @@
-const inputElement = document.getElementById("password") as HTMLInputElement;
+const inputElement = document.querySelector(".input-block input") as HTMLInputElement;
 const placeholderElement = document.querySelector(".placeholder") as HTMLPreElement;
 const placeholderExample: string[] = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX".split("");
 

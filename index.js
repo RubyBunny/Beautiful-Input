@@ -1,4 +1,4 @@
-var inputElement = document.getElementById("password");
+var inputElement = document.querySelector(".input-block input");
 var placeholderElement = document.querySelector(".placeholder");
 var placeholderExample = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX".split("");
 inputElement.addEventListener("input", function (e) {
