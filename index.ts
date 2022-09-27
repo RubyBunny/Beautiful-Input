@@ -3,7 +3,9 @@ const placeholderElement = document.querySelector(".placeholder") as HTMLPreElem
 const placeholderExample: string[] = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX".split("");
 
 inputElement.addEventListener("input", (e) => {
-    const inputText: string[] = inputElement.value.split("");
+    const capitalizeText: string = inputElement.value.toUpperCase();
+    inputElement.value = capitalizeText;
+    const inputText: string[] = capitalizeText.split("");
     const newPlaceholderExample = placeholderExample.slice(inputText.length, -1);
     const newPlaceholder: string = "\u0020".repeat(inputText.length) + newPlaceholderExample.join("");
 
