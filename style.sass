@@ -1,0 +1,94 @@
+*,
+*::after,
+*::before
+    box-sizing: border-box
+    text-decoration: none
+    margin: 0
+    padding: 0
+
+body
+    max-width: 100vw
+    height: 100vh
+    background: #282828
+
+    font-family: "JetBrainsMono Nerd Font"
+    font-weight: 700
+    font-size: 20px
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+.input-block
+    border: 3px solid #BFBFBF
+    border-radius: 18px
+    background: inherit
+
+    position: relative
+
+    & input
+        width: 550px
+        height: 50px
+
+        color: #FFFFFF
+
+        font-family: inherit
+        font-weight: inherit
+        font-size: inherit
+        
+        padding: 0 5%
+
+        outline: none
+        border: none
+        border-radius: inherit
+        background: transparent
+
+        position: relative
+        z-index: 2
+
+
+    & label
+        color: #BFBFBF
+        background: inherit
+
+        position: absolute
+        left: 5%
+        top: 50%
+        transform: translate(-5px, -50%)
+        z-index: 3
+
+        padding: 0 5px
+
+        transition: .25s
+
+    & input:focus + label,
+    & input:valid + label
+        top: -2px
+
+    & .placeholder-block
+        opacity: 0
+        background: none
+        transition: .35s
+
+        padding: 0 5%
+
+        position: absolute
+        bottom: 0
+        right: 0
+        left: 0
+        top: 0
+
+        z-index: 1
+
+        display: flex
+        align-items: center
+
+        & .placeholder
+            color: #606060
+            font-family: inherit
+            font-weight: inherit
+            font-size: inherit
+
+    & input:valid ~ .placeholder-block,
+    & input:focus ~ .placeholder-block
+        opacity: 1
