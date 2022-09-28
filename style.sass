@@ -1,3 +1,8 @@
+@font-face 
+    font-family: JetBrainsMono
+    src: url("./fonts/JetBrainsMono-SemiBold.ttf")
+
+
 *,
 *::after,
 *::before
@@ -11,8 +16,7 @@ body
     height: 100vh
     background: #282828
 
-    font-family: "JetBrainsMono Nerd Font"
-    font-weight: 700
+    font-family: "JetBrainsMono"
     font-size: 20px
 
     display: flex
@@ -33,7 +37,6 @@ body
         color: #FFFFFF
 
         font-family: inherit
-        font-weight: inherit
         font-size: inherit
         
         padding: 0 5%
@@ -84,11 +87,10 @@ body
         align-items: center
 
         & .placeholder
+            white-space: pre
             color: #606060
             font-family: inherit
-            font-weight: inherit
             font-size: inherit
 
-    & input:valid ~ .placeholder-block,
     & input:focus ~ .placeholder-block
         opacity: 1

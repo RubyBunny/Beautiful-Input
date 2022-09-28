@@ -1,12 +1,14 @@
-var inputElement = document.querySelector(".input-block input");
-var placeholderElement = document.querySelector(".placeholder");
-var placeholderExample = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX".split("");
-inputElement.addEventListener("input", function (e) {
-    var capitalizeText = inputElement.value.toUpperCase();
+"use strict";
+const inputElement = document.querySelector(".input-block input");
+const placeholderElement = document.querySelector(".placeholder");
+const placeholderExample = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX".split("");
+inputElement.addEventListener("input", (e) => {
+    const capitalizeText = inputElement.value.toUpperCase();
     inputElement.value = capitalizeText;
-    var inputText = capitalizeText.split("");
-    var newPlaceholderExample = placeholderExample.slice(inputText.length, -1);
-    var newPlaceholder = "\u0020".repeat(inputText.length) + newPlaceholderExample.join("");
-    placeholderElement.innerText = newPlaceholder;
+    const inputText = capitalizeText.split("");
+    const newPlaceholderExample = placeholderExample.slice(inputText.length, -1);
+    const whitespaces = new Array(inputText.length).fill(" ");
+    const newPlaceholder = whitespaces.join("") + newPlaceholderExample.join("");
+    placeholderElement.innerHTML = newPlaceholder;
     console.log(newPlaceholder);
 });

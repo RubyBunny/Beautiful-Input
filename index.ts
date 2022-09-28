@@ -5,10 +5,13 @@ const placeholderExample: string[] = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX".spl
 inputElement.addEventListener("input", (e) => {
     const capitalizeText: string = inputElement.value.toUpperCase();
     inputElement.value = capitalizeText;
+
     const inputText: string[] = capitalizeText.split("");
     const newPlaceholderExample = placeholderExample.slice(inputText.length, -1);
-    const newPlaceholder: string = "\u0020".repeat(inputText.length) + newPlaceholderExample.join("");
+    
+    const whitespaces: string[] = new Array(inputText.length).fill(" ");
+    const newPlaceholder: string = whitespaces.join("") + newPlaceholderExample.join("");
 
-    placeholderElement.innerText = newPlaceholder;
+    placeholderElement.innerHTML = newPlaceholder;
     console.log(newPlaceholder);
 });
